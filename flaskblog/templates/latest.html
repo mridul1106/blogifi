@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="container-fluid">
+
+
+			<h3>LATEST POSTS</h3>
+			<br>
+			<br>
+
+			<div class="row">
+
+			{% for i in range(3): %}        
+	       		<div class="card" style="width:22rem;">
+
+		    		<div class="card body">
+		    			<a class="" href="{{ url_for('user_posts', username=posts.items[0].author.username) }}">{{ posts.items[i].author.username }}</a>
+			    		<p class="article-content">{{ posts.items[i].title }}</p>
+			    		<p class="article-content">{{ posts.items[i].content | truncate(350) }}</p>
+		    			<a href="{{ url_for('post', post_id=posts.items[i].id) }}" class="btn btn-info btn-light"  role="button">Read more</a>
+		    		</div>
+
+		    
+				</div>
+
+
+
+
+	    {% endfor %}
+
+	</div>
+
+	    <br>
+	    <br>
+	</div>
+
+{% endblock content %}

@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<div class=".container-fluid" >
+		<img src="static/background.jpg" id="bg" alt="Snow" style="width:100%;">
+		<div class="text-justify">BLOGIFY</div>
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<div class="container-fluid" id="aman">
+
+<br>
+		<h3 id="swizz">LATEST POSTS</h3>
+		<br>
+		<br>
+
+		<div class="row">
+
+		{% for i in range(3): %}        
+       		<div class="card" style="width:22rem;">
+
+	    		<div class="card body">
+	    			<br>
+	    			<a class="" href="{{ url_for('user_posts', username=posts.items[0].author.username) }}">{{ posts.items[i].author.username }}</a>
+	    			<small class="text-muted">{{ posts.items[i].date_posted.strftime('%Y-%m-%d') }}</small>
+	    			<br>
+		    		<p class="article-content" id="cardtitle">{{ posts.items[i].title }}</p>
+		    		<hr>
+		    		<p class="article-content" id="cardcontent">{{ posts.items[i].content | truncate(350) }}</p>
+	    			
+	    		</div>
+	    			<a href="{{ url_for('post', post_id=posts.items[i].id) }}" class="btn btn-info btn-light" id="button"  role="button">Read more</a>
+	    			<br>
+	    
+			</div>
+
+
+
+
+    {% endfor %}
+
+</div>
+
+ 
+    
+    <br>
+</div>
+<br>
+<div class="seclast">
+	{% if current_user.is_authenticated %}
+	<h3>To view all posts please <a href="{{ url_for('allposts') }}">click here</a></h3>
+	{% else %}
+	<h3>To view all posts please login by clicking <a href="{{ url_for('login') }}">here</a></h3>
+	{% endif %}
+</div>
+
+<br>
+<br>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3" id="footi">
+	<div class="container">
+	  	
+    <!-- Grid row-->
+    <div class="row">
+    	
+	  	<div class="col-lg-4">
+	  		<h5 class="conta">Contact me-</h5>
+	  		<p>mridulshukla1106@gmail.com</p>
+	  		<p>+91 6390 884 108</p>
+	  	</div>
+      <!-- Grid column -->
+      <div class="col-lg-8 py-4">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic conta"  href="https://www.facebook.com/mridul.shukla.7587/" target="blanck">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x" > </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic conta" href="https://twitter.com/MridulS48894606" target="blanck">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          
+          <!--Linkedin -->
+          <a class="li-ic conta" href="https://www.linkedin.com/in/mridul-shukla/" target="blanck">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic conta" href="https://www.instagram.com/_mridulshukla/" target="blanck">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" id="footest">© 2020 Copyright: 
+    <a href="https://mridul1106.github.io/" target="blanck" id="raju"> Mridul Shukla</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+{% endblock content %}
