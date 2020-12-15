@@ -1,1 +1,1 @@
-web: gunicorn run:flaskblog
+web:gunicorn run:flaskblog
