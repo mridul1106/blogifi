@@ -12,8 +12,8 @@ app.config['SQLALCHEMY_DATABASE_URI']='postgres://dfmpwulvaqkfii:f0890fee881e6ee
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # heroku = Heroku(app)
-# db = SQLAlchemy(app)
-# db.init_app(app)
+db = SQLAlchemy(app)
+db.init_app(app)
 
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
