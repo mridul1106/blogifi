@@ -7,10 +7,11 @@ from flask_mail import Mail
 
 
 
-
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgres://bsuwdgvzvurkpj:0383e6046646f9f6814adfe5da0deb777e24bc7fa41abd465a123d54850f73f6@ec2-18-211-171-122.compute-1.amazonaws.com:5432/dajp8dqbsg8d4s'
+app.config['SQLALCHEMY_DATABASE_URI']='postgres://dfmpwulvaqkfii:f0890fee881e6ee3bebb46616f53e154f666313d796fdc131bab9bd484b4ce66@ec2-52-44-235-121.compute-1.amazonaws.com:5432/d6skm3id6meq23'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 # heroku = Heroku(app)
 # db = SQLAlchemy(app)
 # db.init_app(app)
@@ -25,8 +26,8 @@ login_manager.login_message_category = 'info'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('DB_USER')
-app.config['MAIL_PASSWORD'] = os.environ.get('DB_PASS')
+app.config['MAIL_USERNAME'] = 'flask.blog11@gmail.com'
+app.config['MAIL_PASSWORD'] = 'blog@1465'
 mail = Mail(app)
 
 from flaskblog import routes
