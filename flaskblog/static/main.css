@@ -386,13 +386,13 @@ color: #ffffff;
 
   .text-justify {
   color: #ffffff;
-  font-family: 'Aclonica';font-size: 30px;
+  font-family: 'Aclonica';font-size: 40px;
   position: absolute;
   top: 6%;
   left: 70%;
 }
   #swizz {
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Raleway', sans-serif;
   color: #ffffff;
 }
@@ -411,10 +411,10 @@ color: #ffffff;
   width: 400px;
   height: auto;
   margin-left: auto;
-  margin-right: 25px;
+  margin-right: 5px;
   margin-bottom: 20px;
   padding-left: 0px;
-  padding-right: 70px;
+  padding-right: 20px;
   background-color: #ffffff;
 }
   #allposts {
